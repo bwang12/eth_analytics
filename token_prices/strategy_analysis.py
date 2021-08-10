@@ -47,11 +47,12 @@ daily_il_yield = .01777
 daily_sushi_yield = .0133
 daily_reduction = .00105
 starting_value = 10000
+starting_value2 = 10000
 days = 180 
 values = []
 while days > 0: 
     print(starting_value)
-    starting_value = starting_value + (starting_value*(daily_sushi_yield)) + (starting_value*(daily_il_yield))
+    starting_value = starting_value + (starting_value*(daily_il_yield))
     #total_yield = total_yield - daily_reduction
     values.append(starting_value)
     days = days - 1 

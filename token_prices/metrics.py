@@ -7,7 +7,7 @@ cg = CoinGeckoAPI()
 date = []
 eth_price = []
 
-eth_price_history = cg.get_coin_market_chart_by_id(id='defipulse-index', vs_currency='usd', days='165')
+eth_price_history = cg.get_coin_market_chart_by_id(id='ethereum', vs_currency='usd', days='30')
 eth_price_dict = eth_price_history['prices']
 
 for x in eth_price_dict: 
@@ -16,7 +16,7 @@ for x in eth_price_dict:
 total_yield = .28
 daily_reduction = .00105
 starting_value = 10000
-days = 165
+days = 30
 values = []
 while days > 0: 
     #print(starting_value)
@@ -37,13 +37,13 @@ list_returns_percent_a = [100 * (b - a) / a for a, b in zip(values[::1], values[
 x = pd.Series(list_returns_percent_a)
 from datetime import datetime
 
-date_range = pd.date_range(end = datetime.today(), periods = 100).to_pydatetime().tolist()
+date_range = pd.date_range(end = datetime.today(), periods = 29).to_pydatetime().tolist()
 
 x.index = date_range
 x = x/100
 print(x)
-qs.plots.rolling_sharpe(x)
-
+#qs.plots.rolling_volatility(x)
+qs.reports.html(x)
 '''
 x.index = pd.to_datetime(x.index)
 print(x)

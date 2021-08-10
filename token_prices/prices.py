@@ -15,7 +15,7 @@ sushi_price = []
 
 # retreive JSONs
 eth_price_history = cg.get_coin_market_chart_by_id(id='olympus', vs_currency='usd', days='60')
-dpi_price_history = cg.get_coin_market_chart_by_id(id='defipulse-index', vs_currency='usd', days='30')
+dpi_price_history = cg.get_coin_market_chart_by_id(id='ethereum', vs_currency='usd', days='60')
 
 # get prices 
 eth_price_dict = eth_price_history['prices']
@@ -75,10 +75,11 @@ fig.add_trace(go.Scatter(x=date, y=eth_price,
                     mode='lines',
                     name='OHM Price',
                     line_color='blue'))
-'''
-fig.add_trace(go.Scatter(x=date, y=solana_price,
+
+fig.add_trace(go.Scatter(x=date, y=dpi_price,
                     mode='lines',
-                    name='SOL Price',yaxis='y2'))
+                    name='ETH Price',yaxis='y2'))
+'''
 fig.add_trace(go.Scatter(x=date, y=avalanche_price,
                     mode='lines',
                     name='AVAX Price',yaxis='y3'))

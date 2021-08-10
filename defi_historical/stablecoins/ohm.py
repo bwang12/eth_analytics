@@ -14,7 +14,7 @@ ohm_pol_data = pd.read_csv('data/ohm_pol.csv')
 
 
 #print(ohm_apy_data.columns)
-fig = px.line(ohm_pol_data, x="date", y="pol")
+fig = px.line(ohm_marketcap_data, x="date", y="pol")
 
 
 fig.update_layout(

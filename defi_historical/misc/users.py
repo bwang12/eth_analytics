@@ -10,17 +10,20 @@ yearn_users_data = pd.read_csv('data/yearn_users.csv')
 uniswap_retention = pd.read_csv('data/uniswap_retention.csv')  
 sushiswap_retention = pd.read_csv('data/sushiswap_retention.csv')
 cream_users_data = pd.read_csv('data/cream_users.csv')
+polygon_users_data = pd.read_csv('data/daily_polygon_users.csv')
+users_by_project = pd.read_csv('data/users_by_project.csv')
 print(uniswap_retention)
 # users
 
 fig = go.Figure()
-fig.add_trace(go.Scatter(x=users_data['date'], y=users_data['total_users'],
+'''
+fig.add_trace(go.Scatter(x=users_by_project['date'], y=polygon_users_data['users'],
                     mode='lines',
                     name='lines',
                     line_color='blue'))
-
+'''
 #retention 
-#fig = px.bar(sushiswap_retention, sushiswap_retention["month"], y=sushiswap_retention["count"], color="status")
+fig = px.bar(users_by_project, x=users_by_project['date'], y=users_by_project["users"], color="project")
 
 
 
