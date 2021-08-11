@@ -11,7 +11,7 @@ eip_data = pd.read_csv('data/eip.csv')
 eip_data = eip_data.reindex(index=eip_data.index[::-1])
 issuance = []
 issuance.append(2)
-blocks = 21848
+blocks = 40077
 
 #fig = px.bar(eip_data, x="number", y="Burned ETH per Block")
 
@@ -25,7 +25,7 @@ print(eip_data['Burned ETH per Block'].mean())
 
 eip_data['total_burn'] = -1 * eip_data['total_burn']
 eip_data['cumulative_issuance'] = eip_data['issuance'] + eip_data['total_burn']
-
+'''
 fig.add_trace(go.Scatter(x=eip_data['number'], y=eip_data['Burned ETH per Block'],
                     name='Burned ETH',
                     fill='tozeroy'))
@@ -40,7 +40,7 @@ fig.add_trace(go.Scatter(x=eip_data['number'], y=eip_data['total_burn'],
 fig.add_trace(go.Scatter(x=eip_data['number'], y=eip_data['cumulative_issuance'],
                     name='Issuance - Burn',marker_color='rgba(0, 0, 0, 0.5)'))
 #print(eip_data)
-'''
+
 '''
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=eip_data['number'], y=eip_data['total_burn'],
