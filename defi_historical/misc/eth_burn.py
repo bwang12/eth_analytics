@@ -25,12 +25,12 @@ print(eip_data['Burned ETH per Block'].mean())
 
 eip_data['total_burn'] = -1 * eip_data['total_burn']
 eip_data['cumulative_issuance'] = eip_data['issuance'] + eip_data['total_burn']
-'''
+
 fig.add_trace(go.Scatter(x=eip_data['number'], y=eip_data['Burned ETH per Block'],
                     name='Burned ETH',
                     fill='tozeroy'))
-'''
 
+'''
 fig.add_trace(go.Scatter(x=eip_data['number'], y=eip_data['issuance'],
                     name='ETH Total Issuance',
                     fill='tonexty'))
@@ -40,7 +40,7 @@ fig.add_trace(go.Scatter(x=eip_data['number'], y=eip_data['total_burn'],
 fig.add_trace(go.Scatter(x=eip_data['number'], y=eip_data['cumulative_issuance'],
                     name='Issuance - Burn',marker_color='rgba(0, 0, 0, 0.5)'))
 #print(eip_data)
-
+'''
 '''
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=eip_data['number'], y=eip_data['total_burn'],
