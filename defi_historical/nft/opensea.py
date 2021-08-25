@@ -7,7 +7,7 @@ import plotly.express as px
 opensea_usage = pd.read_csv('data/opensea_monthly_volume.csv')  
 opensea_traders = pd.read_csv('data/openseatraders.csv')  
 
-
+'''
 fig = go.Figure(
     data=[
         go.Bar(
@@ -16,7 +16,15 @@ fig = go.Figure(
         ),
     ],
 )
-
+'''
+fig = go.Figure(
+    data=[
+        go.Bar(
+            x=opensea_usage["month"],
+            y=opensea_usage["usd"],
+        ),
+    ],
+)
 
 fig.update_layout(
     xaxis=dict(

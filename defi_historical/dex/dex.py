@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 # Users over time 
 daily_dex_data = pd.read_csv('data/daily_dex.csv')  
-print(daily_dex_data)
+#print(daily_dex_data)
 monthly_dex_data = pd.read_csv('data/monthly_dex.csv')  
 synthetix_dex_data = pd.read_csv('data/synthetix_volume.csv')  
 perp_dex_data = pd.read_csv('data/perp_traders.csv')  
@@ -16,8 +16,8 @@ ohm_dex_data = pd.read_csv('data/ohm_fees.csv')
 fig = go.Figure(
     data=[
         go.Bar(
-            x=ohm_dex_data["day"],
-            y=ohm_dex_data["total_fees"],
+            x=monthly_dex_data["date_trunc"],
+            y=monthly_dex_data["usd_volume"],
         ),
     ],
 )

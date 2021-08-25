@@ -11,7 +11,7 @@ eip_data = pd.read_csv('data/eip.csv')
 eip_data = eip_data.reindex(index=eip_data.index[::-1])
 issuance = []
 issuance.append(2)
-blocks = 40077
+blocks = 78996
 
 #fig = px.bar(eip_data, x="number", y="Burned ETH per Block")
 

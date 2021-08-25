@@ -10,9 +10,9 @@ print(borrow_data)
 #cust_buy = mainDf[mainDf.Type == 'P']
 #lending_data = lending_data[lending_data.project != 'MakerDAO']
 #fig = px.area(lending_data, x="day", y="locked_usd_value", color="project",
-	      #line_group="project")
-borrow_data = borrow_data[borrow_data.project != 'MakerDAO']
-fig = px.area(borrow_data, x="time", y="supplied", color="project",
+#	      line_group="project")
+#borrow_data = borrow_data[borrow_data.project != 'MakerDAO']
+fig = px.area(borrow_data, x="day", y="outstanding_usd_value", color="project",
 	      line_group="project")
 
 fig.update_layout(
